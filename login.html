@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Admin</title>
+
+  <style>
+    :root {
+      --primary: #5865F2;
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #2d3436;
+      --muted: #6c757d;
+      --danger: #e74c3c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fbff);
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text);
+    }
+
+    .login-card {
+      width: 100%;
+      max-width: 380px;
+      background: var(--card);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      opacity: 0.95;
+    }
+
+    .error {
+      display: none;
+      margin-top: 14px;
+      background: #ffeaea;
+      color: var(--danger);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 18px;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="login-card" id="x"></div>
+
+<script>
+(function(){
+
+  const _T = [
+    "TG9naW4gQWRtaW4=",   
+    "VXNlcm5hbWU=",                 
+    "UGFzc3dvcmQ=",               
+    "TWFzdWtrYW4gdXNlcm5hbWU=",         
+    "TWFzdWtrYW4gcGFzc3dvcmQ=",     
+    "TG9naW4=",           
+    "VXNlcm5hbWUgb3JhdSBwYXNzd29yZCBzYWxhaA==", 
+    "S2VtYmFsaSBrZSBXZWJzaXRl",     
+    "aW5kZXguaHRtbA=="              
+  ];
+
+  const d = s => atob(s);
+
+  document.getElementById("x").innerHTML = `
+    <h2>${d(_T[0])}</h2>
+
+    <label>${d(_T[1])}</label>
+    <input id="username" placeholder="${d(_T[3])}">
+
+    <label>${d(_T[2])}</label>
+    <input id="password" type="password" placeholder="${d(_T[4])}">
+
+    <button class="btn" onclick="login()">${d(_T[5])}</button>
+
+    <div class="error" id="error" style="display:none">
+      ${d(_T[6])}
+    </div>
+
+    <a href="${d(_T[7])}" class="back">
+      ${d(_T[7 - 1])}
+    </a>
+  `;
+})();
+</script>
+
+<script>
+(function(){
+
+  const _x = [
+    "ZGF5bmFw",
+    "MTQwMjA3",     
+    "YWRtaW5Mb2dpbg==", 
+    "dXNlcm5hbWU=",     
+    "cGFzc3dvcmQ=", 
+    "dmFsdWU=",     
+    "dHJpbQ==",   
+    "ZXJyb3I=",       
+    "ZGlzcGxheQ==",   
+    "YmxvY2s=",         
+    "a29udG9sLmh0bWw="  
+  ];
+
+  const _d = i => atob(_x[i]);
+
+  const _U = _d(0);
+  const _P = _d(1);
+  const _K = _d(2);
+
+  const _IU = _d(3);
+  const _IP = _d(4);
+
+  const _V = _d(5);
+  const _T = _d(6);
+
+  const _E = _d(7);
+  const _D = _d(8);
+  const _B = _d(9);
+
+  const _H = _d(10);
+
+  window["login"] = function(){
+
+    const a = document["getElementById"](_IU)[_V][_T]();
+    const b = document["getElementById"](_IP)[_V][_T]();
+
+    a === _U && b === _P
+      ? (
+          window["localStorage"]["setItem"](_K, "true"),
+          window["location"]["href"] = _H
+        )
+      : (
+          document["getElementById"](_E)["style"][_D] = _B
+        );
+  };
+
+})();
+</script>
+
+</body>
+</html>
